@@ -121,7 +121,14 @@
     </audio>
   </div>
 
+  <div class="section">
+    <h2>Estamos juntos há:</h2>
+    <div id="timer"></div>
+  </div>
+
+  
   <script>
+
     // Carrossel automático
     let index = 0;
     const carousel = document.getElementById("carousel");
@@ -131,13 +138,7 @@
       index = (index + 1) % totalImages;
       carousel.style.transform = `translateX(-${index * 100}%)`;
     }, 3000); // Troca a cada 3 segundos
-  <div class="section">
-    <h2>Estamos juntos há:</h2>
-    <div id="timer"></div>
-  </div>
-
-  
-  <script>
+    
     const startDate = new Date("2024-04-13T00:00:00");
 
     function updateTimer() {
