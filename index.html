@@ -137,13 +137,14 @@
 
     // Carrossel automático
     let index = 0;
-    const carousel = document.getElementById("carousel");
-    const totalImages = carousel.children.length;
+const carousel = document.getElementById("carousel");
+const imageWidth = 900; // mesma largura definida no CSS
+const totalImages = carousel.children.length;
 
-    setInterval(() => {
-      index = (index + 1) % totalImages;
-      carousel.style.transform = `translateX(-${index * 100}%)`;
-    }, 3000); // Troca a cada 3 segundos
+setInterval(() => {
+  index = (index + 1) % totalImages;
+  carousel.style.transform = `translateX(-${index * imageWidth}px)`;
+}, 3000);
     
     const startDate = new Date("2024-04-13T00:00:00");
 
