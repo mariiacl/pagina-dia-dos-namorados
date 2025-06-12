@@ -4,15 +4,66 @@
   <meta charset="UTF-8">
   <title>Feliz Dia dos Namorados ❤️</title>
   <style>
+    /* Estilo do fundo estrelado */
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #fff0f5;
-      color: #333;
-      text-align: center;
-      padding: 30px;
+      color: white;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow-x: hidden;
     }
-    title {
-      font-size: 60px;
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://raw.githubusercontent.com/lokesh-coder/night-sky-background/main/stars.png') repeat top center;
+      z-index: -1;
+      animation: moveStars 100s linear infinite;
+    }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
+    }
+
+    .container {
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .carousel {
+      max-width: 600px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      height: auto;
+    }
+
+    .phrases {
+      margin-top: 3rem;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+    }
+
+    audio {
+      display: none;
     }
     h1 {
       color: #d6336c;
@@ -39,33 +90,53 @@
   </style>
 </head>
 <body>
-
-  <h1>Feliz Dia dos Namorados, meu amor! 💖</h1>
+<div class="stars"></div>
+  <div class="container">
+    <h1>Feliz Dia dos Namorados, minha vida 💖</h1>
 
   <p>Desde que te conheci, tudo ficou mais bonito. Você é minha casa, meu porto seguro e minha canção favorita.</p>
   <p>Te amo por tudo o que somos, pelo que construímos e por cada pequeno gesto de carinho entre nós.</p>
 
-  <!-- Música do YouTube em autoplay oculto -->
-  <div style="display:none;">
-    <iframe width="0" height="0"
-      src="https://www.youtube.com/embed/9vdX78fuu0Q?autoplay=1&loop=1&playlist=9vdX78fuu0Q"
-      frameborder="0" allow="autoplay" allowfullscreen>
-    </iframe>
+  <!-- Carrossel de Imagens -->
+    <div class="carousel">
+      <div class="carousel-images" id="carousel">
+        <img src="img1.jpg" alt="Casal 1" />
+        <img src="img2.jpg" alt="Casal 2" />
+        <img src="img3.jpg" alt="Casal 3" />
+        <!-- Adicione mais imagens se quiser -->
+      </div>
+    </div>
+
+    <!-- Frases Românticas -->
+    <div class="phrases">
+      <p>“Você é o meu lugar favorito no mundo inteiro.”</p>
+      <p>“Amar você é como respirar... não posso parar.”</p>
+      <p>“De todos os sorrisos, o seu é o meu favorito.”</p>
+    </div>
+
+    <!-- Música -->
+    <audio id="romanticMusic" autoplay loop>
+      <source src="musica.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
   </div>
 
+  <script>
+    // Carrossel automático
+    let index = 0;
+    const carousel = document.getElementById("carousel");
+    const totalImages = carousel.children.length;
+
+    setInterval(() => {
+      index = (index + 1) % totalImages;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 3000); // Troca a cada 3 segundos
   <div class="section">
     <h2>Estamos juntos há:</h2>
     <div id="timer"></div>
   </div>
 
-  <div class="section">
-    <h2>Nossos Momentos</h2>
-    <!-- Substitua os src abaixo pelas suas fotos -->
-    <img src="FOTO1_URL" alt="Foto nossa">
-    <img src="FOTO2_URL" alt="Outro momento">
-    <img src="FOTO3_URL" alt="Mais amor">
-  </div>
-
+  
   <script>
     const startDate = new Date("2024-04-13T00:00:00");
 
