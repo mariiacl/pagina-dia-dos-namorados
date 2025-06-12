@@ -37,23 +37,24 @@
     }
 
     .carousel {
-      max-width: 600px;
-      margin: 2rem auto;
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    }
+  max-width: 800px; /* Aumentado de 600px para 800px */
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
 
-    .carousel-images {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 
-    .carousel-images img {
-      width: 100%;
-      height: auto;
-    }
+.carousel-images img {
+  width: 800px; /* Largura fixa igual ao carrossel */
+  height: 500px; /* Altura fixa para padronizar o tamanho */
+  object-fit: cover; /* Garante que a imagem preencha bem o espaço */
+}
 
     .phrases {
       margin-top: 3rem;
